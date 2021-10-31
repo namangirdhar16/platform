@@ -216,10 +216,11 @@ class ProductStreamUpdater extends EntityIndexer
         $criteria = new Criteria();
         $criteria->addFilter(...$parsed);
 
-        if ($ids !== null) {
+        if ($ids !== null && count($ids) > 0) {
             $criteria->addFilter(new EqualsAnyFilter('id', $ids));
         }
 
         return $criteria;
     }
+
 }
